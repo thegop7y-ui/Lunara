@@ -1,0 +1,24 @@
+
+if autoload == nil then autoload = true end
+if autoleave == nil then autoleave = true end
+
+pcall(function()
+    if not autoload then return end
+    if autoleave then
+        queue_on_teleport([[
+            pcall(function()
+                autoload = true;
+                autoleave = true;
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/thegop7y-ui/Lunara/refs/heads/main/Lunarav1.txt'))()
+            end)
+        ]])
+    else
+        queue_on_teleport([[
+            pcall(function()
+                autoload = true;
+                autoleave = false;
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/thegop7y-ui/Lunara/refs/heads/main/Lunarav1.txt'))()
+            end)
+        ]])
+    end
+end)
